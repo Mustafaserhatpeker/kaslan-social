@@ -28,7 +28,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     useEffect(() => {
-        setTheme(theme); // Apply initial theme
+        setTheme(theme);
     }, []);
 
     return (
