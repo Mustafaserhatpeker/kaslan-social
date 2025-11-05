@@ -29,6 +29,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { useThemeContext } from "@/contexts/themeContext"
+import { Button } from "./ui/button"
 
 export function NavUser({
   user,
@@ -40,7 +42,7 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
-
+  const { toggleTheme } = useThemeContext();
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -83,28 +85,29 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <Sparkles />
-                Upgrade to Pro
+                Pro'ya Geç
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Account
+                Hesap
               </DropdownMenuItem>
-              <DropdownMenuItem>
-                <CreditCard />
-                Billing
-              </DropdownMenuItem>
+
               <DropdownMenuItem>
                 <Bell />
-                Notifications
+                Bildirimler
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
+            <DropdownMenuItem onClick={toggleTheme}>
+              <Sparkles />
+              Tema Değiştir
+            </DropdownMenuItem>
             <DropdownMenuItem>
               <LogOut />
-              Log out
+              Çıkış Yap
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
