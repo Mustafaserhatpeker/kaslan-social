@@ -1,6 +1,6 @@
 import * as React from "react"
 import {
-  AudioWaveform,
+
   Command,
   Home,
   Inbox,
@@ -22,40 +22,31 @@ import {
 const data = {
   teams: [
     {
-      name: "Acme Inc",
+      name: "Kaslan Hub",
       logo: Command,
       plan: "Enterprise",
     },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
+
   ],
   navMain: [
     {
-      title: "Search",
+      title: "Arama Yap",
       url: "#",
       icon: Search,
     },
     {
-      title: "Ask AI",
+      title: "Aktivite Geçmişi",
       url: "#",
       icon: Sparkles,
     },
     {
-      title: "Home",
+      title: "Akış",
       url: "#",
       icon: Home,
       isActive: true,
     },
     {
-      title: "Inbox",
+      title: "Kütüphanem",
       url: "#",
       icon: Inbox,
       badge: "10",
