@@ -22,7 +22,7 @@ import { CommentInput } from "./CommentInput"
 
 export function DataCard() {
     return (
-        <Card className="w-full max-w-lg bg-transparent">
+        <Card className="w-full max-w-xl bg-transparent">
             <CardHeader>
                 <div className="flex flex-row flex-wrap items-center gap-2">
                     <Avatar>
@@ -47,7 +47,7 @@ export function DataCard() {
                 <img
                     src={UcurtmaAvcisi}
                     alt="Uçurtma Avcısı Kitap Kapak"
-                    className="rounded-md max-w-md"
+                    className="rounded-md max-w-lg"
                 />
 
             </CardContent>
