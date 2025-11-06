@@ -26,7 +26,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const menuItems = [
     { title: "Ana Sayfa", icon: Home, url: "/" },
     { title: "Ara", icon: Search, url: "/search" },
-    { title: "Keşfet", icon: Compass, url: "/discover" },
+    { title: "Keşfet", icon: Compass, url: "/explore" },
     { title: "Kaydedilenler", icon: Bookmark, url: "/saved" },
     { title: "Koleksiyon", icon: FolderIcon, url: "/collections" },
   ]
