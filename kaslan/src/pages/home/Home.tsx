@@ -1,8 +1,9 @@
-import React from 'react'
-
+import HomeScroll from './components/home-scroll'
 function Home() {
     return (
-        <div>Home</div>
+        <div>
+            <HomeScroll />
+        </div>
     )
 }
 
