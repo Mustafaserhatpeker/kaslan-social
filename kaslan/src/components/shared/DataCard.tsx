@@ -17,6 +17,8 @@ import UcurtmaAvcisi from '@/assets/ucurtma-avcisi.jpg'
 import LikeButton from "./LikeButton"
 import { MessageCircle } from "lucide-react"
 import SaveButton from "./SaveButton"
+import { CommentInput } from "./CommentInput"
+
 
 export function DataCard() {
     return (
@@ -34,9 +36,7 @@ export function DataCard() {
                         </span>
                     </div>
                 </div>
-                <CardDescription>
-                    Uçurtma Avcısı, Şuana kadar okuduğum en iyi kitaplardan biri. Kesinlikle tavsiye ederim!
-                </CardDescription>
+
                 <CardAction>
                     <Button variant="link">
                         Takip Et
@@ -51,16 +51,35 @@ export function DataCard() {
                 />
 
             </CardContent>
-            <CardFooter className="flex-row items-center justify-between  px-8">
-                <div className="flex flex-row w-1/2 items-center justify-start gap-4">
-                    <LikeButton />
-                    <button className="flex cursor-pointer items-center justify-center gap-1 ">
-                        <MessageCircle className="h-7 w-7" />
-                    </button>
+            <CardFooter className="flex-col items-start justify-between  px-8 gap-4">
+                <div className="flex flex-row items-center justify-between w-full">
+                    <div className="flex flex-row w-1/2 items-center justify-start gap-4">
+                        <LikeButton />
+                        <button className="flex cursor-pointer items-center justify-center gap-1 ">
+                            <MessageCircle className="h-7 w-7" />
+                        </button>
+                    </div>
+
+                    <SaveButton />
                 </div>
+                <div className="flex flex-row items-center justify-start gap-4 w-full">
+                    <span className="text-sm text-muted-foreground">9.856 beğenme</span>
+                </div>
+                <CardDescription className="dark:text-white text-black">
+                    <span className="text-sm font-bold pr-1 ">
+                        @shadcn
+                    </span>
+                    Uçurtma Avcısı, Şuana kadar okuduğum en iyi kitaplardan biri. Kesinlikle tavsiye ederim!
+                </CardDescription>
+                <Button style={{
+                    padding: 0,
+                    margin: 0,
+                    background: 'none',
+                    border: 'none',
+                    boxShadow: 'none',
+                }} variant={"ghost"} className="text-sm text-muted-foreground">23 yorumun tümünü gör</Button>
 
-                <SaveButton />
-
+                <CommentInput />
             </CardFooter>
         </Card>
     )
