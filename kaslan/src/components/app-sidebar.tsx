@@ -4,8 +4,6 @@ import * as React from "react"
 import {
   Home,
   Compass,
-  Bookmark,
-  FolderIcon,
   Command,
   Search,
 } from "lucide-react"
@@ -27,8 +25,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     { title: "Ana Sayfa", icon: Home, url: "/" },
     { title: "Ara", icon: Search, url: "/search" },
     { title: "Keşfet", icon: Compass, url: "/explore" },
-    { title: "Kaydedilenler", icon: Bookmark, url: "/saved" },
-    { title: "Koleksiyon", icon: FolderIcon, url: "/collections" },
+
   ]
 
   const user = {
