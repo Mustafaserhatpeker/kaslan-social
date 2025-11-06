@@ -49,7 +49,6 @@ export function DataCard() {
                     alt="Uçurtma Avcısı Kitap Kapak"
                     className="rounded-md max-w-lg"
                 />
-
             </CardContent>
             <CardFooter className="flex-col items-start justify-between  px-8 gap-4">
                 <div className="flex flex-row items-center justify-between w-full">
