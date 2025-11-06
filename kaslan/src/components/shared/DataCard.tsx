@@ -16,6 +16,7 @@ import {
 import UcurtmaAvcisi from '@/assets/ucurtma-avcisi.jpg'
 import LikeButton from "./LikeButton"
 import { MessageCircle } from "lucide-react"
+import SaveButton from "./SaveButton"
 
 export function DataCard() {
     return (
@@ -57,6 +58,8 @@ export function DataCard() {
                         <MessageCircle className="h-7 w-7" />
                     </button>
                 </div>
+
+                <SaveButton />
 
             </CardFooter>
         </Card>
