@@ -35,7 +35,8 @@
     "styled-components": "^6.1.19",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.16",
-    "three": "^0.181.0"
+    "three": "^0.181.0",
+    "tmdbv3": "^0.1.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

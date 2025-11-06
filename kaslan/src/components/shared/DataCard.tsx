@@ -18,7 +18,6 @@ import LikeButton from "./LikeButton"
 import { MessageCircle } from "lucide-react"
 import SaveButton from "./SaveButton"
 import { CommentInput } from "./CommentInput"
-import StarArea from "./StarArea"
 
 export function DataCard() {
     return (
@@ -57,7 +56,7 @@ export function DataCard() {
                         <button className="flex cursor-pointer items-center justify-center gap-1 ">
                             <MessageCircle className="h-7 w-7" />
                         </button>
-                        <StarArea />
+
                     </div>
 
                     <SaveButton />
