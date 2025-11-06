@@ -1,5 +1,3 @@
-"use client"
-
 import {
   BadgeCheck,
   Bell,
@@ -9,11 +7,7 @@ import {
   Sparkles,
 } from "lucide-react"
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -29,8 +23,9 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
-import { useThemeContext } from "@/contexts/themeContext"
-import { Button } from "./ui/button"
+
+// ✅ Tema context'i import ediliyor
+import { useThemeContext } from "@/contexts/ThemeContext"
 
 export function NavUser({
   user,
@@ -42,7 +37,10 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
-  const { toggleTheme } = useThemeContext();
+
+  // ✅ Tema fonksiyonları burada
+  const { toggleTheme, theme } = useThemeContext()
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -63,10 +61,11 @@ export function NavUser({
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
+
           <DropdownMenuContent
             className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg"
             side={isMobile ? "bottom" : "right"}
-            align="start"
+            align="end"
             sideOffset={4}
           >
             <DropdownMenuLabel className="p-0 font-normal">
@@ -81,34 +80,40 @@ export function NavUser({
                 </div>
               </div>
             </DropdownMenuLabel>
+
             <DropdownMenuSeparator />
+
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={toggleTheme}>
                 <Sparkles />
-                Pro'ya Geç
+                Tema Değiştir ({theme === "light" ? "Gündüz" : "Gece"})
               </DropdownMenuItem>
             </DropdownMenuGroup>
+
             <DropdownMenuSeparator />
+
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <BadgeCheck />
-                Hesap
+                Account
               </DropdownMenuItem>
-
+              <DropdownMenuItem>
+                <CreditCard />
+                Billing
+              </DropdownMenuItem>
               <DropdownMenuItem>
                 <Bell />
-                Bildirimler
+                Notifications
               </DropdownMenuItem>
             </DropdownMenuGroup>
+
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={toggleTheme}>
-              <Sparkles />
-              Tema Değiştir
-            </DropdownMenuItem>
+
             <DropdownMenuItem>
               <LogOut />
-              Çıkış Yap
+              Log out
             </DropdownMenuItem>
+
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
