@@ -27,8 +27,12 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
         <form>
           <FieldGroup>
             <Field>
-              <FieldLabel htmlFor="name">Full Name</FieldLabel>
+              <FieldLabel htmlFor="name">Name</FieldLabel>
               <Input id="name" type="text" placeholder="John Doe" required />
+            </Field>
+            <Field>
+              <FieldLabel htmlFor="surname">Surname</FieldLabel>
+              <Input id="surname" type="text" placeholder="Doe" required />
             </Field>
             <Field>
               <FieldLabel htmlFor="email">Email</FieldLabel>
@@ -50,19 +54,10 @@ export function SignupForm({ ...props }: React.ComponentProps<typeof Card>) {
                 Must be at least 8 characters long.
               </FieldDescription>
             </Field>
-            <Field>
-              <FieldLabel htmlFor="confirm-password">
-                Confirm Password
-              </FieldLabel>
-              <Input id="confirm-password" type="password" required />
-              <FieldDescription>Please confirm your password.</FieldDescription>
-            </Field>
+
             <FieldGroup>
               <Field>
                 <Button type="submit">Create Account</Button>
-                <Button variant="outline" type="button">
-                  Sign up with Google
-                </Button>
                 <FieldDescription className="px-6 text-center">
                   Already have an account? <a href="/login">Sign in</a>
                 </FieldDescription>

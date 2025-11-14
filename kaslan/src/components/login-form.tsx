@@ -95,11 +95,6 @@ export function LoginForm({
 
               <Field className="mt-4">
                 <Button type="submit">Login</Button>
-
-                <Button variant="outline" type="button">
-                  Login with Google
-                </Button>
-
                 <FieldDescription className="text-center">
                   Don&apos;t have an account? <a href="/register">Sign up</a>
                 </FieldDescription>
