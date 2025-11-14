@@ -53,7 +53,6 @@ const RegisterPage = () => {
             data.password,
             data.name,
             data.surname,
-
         );
         if (res) {
             navigate("/login");
