@@ -15,7 +15,7 @@ interface AuthStore {
 
   register: (
     email: string,
-    identityNumber: string,
+
     name: string,
     surname: string,
     password: string
@@ -66,7 +66,7 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
     }
   },
 
-  register: async (email, password, name, surname, identityNumber) => {
+  register: async (email, password, name, surname) => {
     set({ isLoading: true });
     try {
       await axiosInstance.post("/auth/register", {
@@ -74,7 +74,6 @@ export const useAuthStore = create<AuthStore>((set, get) => ({
         password,
         name,
         surname,
-        identityNumber,
       });
       set({ isLoading: false });
       return true;
