@@ -7,6 +7,9 @@ const tags = Array.from({ length: 10 }).map(
     (_, i, a) => `v1.2.0-beta.${a.length - i}`
 )
 
+
+
+
 export function InfiniteScroll() {
     return (
         <ScrollArea className="h-full max-h-[90vh] w-full rounded-md ">
