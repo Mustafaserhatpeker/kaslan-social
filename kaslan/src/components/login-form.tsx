@@ -14,11 +14,33 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
+import { useNavigate } from "react-router-dom"
+import { useAuthStore } from "@/stores/auth.store"
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+
+  const navigate = useNavigate();
+
+  const { login, isLoading, message, isAuthenticated } = useAuthStore();
+
+  const onSubmit = async (data: any) => {
+    try {
+      await login(data.email, data.password);
+      if (isAuthenticated) {
+        navigate("/");
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  if (isLoading) {
+    return <span>Loading...</span>;
+  }
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
@@ -29,12 +51,25 @@ export function LoginForm({
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+
+              const formData = new FormData(e.currentTarget);
+              const data = {
+                email: formData.get("email"),
+                password: formData.get("password"),
+              };
+
+              onSubmit(data);
+            }}
+          >
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
                   id="email"
+                  name="email"
                   type="email"
                   placeholder="m@example.com"
                   required
@@ -50,21 +85,35 @@ export function LoginForm({
                     Forgot your password?
                   </a>
                 </div>
-                <Input id="password" type="password" required />
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                />
               </Field>
-              <Field>
+
+              <Field className="mt-4">
                 <Button type="submit">Login</Button>
+
                 <Button variant="outline" type="button">
                   Login with Google
                 </Button>
+
                 <FieldDescription className="text-center">
                   Don&apos;t have an account? <a href="/register">Sign up</a>
                 </FieldDescription>
+
+                {message && (
+                  <FieldDescription className="text-center text-red-500">
+                    {message}
+                  </FieldDescription>
+                )}
               </Field>
             </FieldGroup>
           </form>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
