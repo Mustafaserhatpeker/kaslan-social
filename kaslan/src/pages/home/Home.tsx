@@ -3,7 +3,7 @@ import HomeScroll from './components/home-scroll'
 function Home() {
     return (
         <div className='grid grid-cols-5 items-start gap-8 '>
-            <div className='col-span-3 overflow-auto scroll-smooth h-screen'>
+            <div className='col-span-3 overflow-auto scroll-smooth h-[88vh]'>
                 <HomeScroll />
             </div>
             <div className='col-span-2'>

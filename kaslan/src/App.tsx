@@ -3,6 +3,7 @@ import Home from "@/pages/home/Home";
 import Layout from "@/layouts/Layout";
 import Login from "@/pages/auth/Login";
 import Register from "@/pages/auth/Register";
+import Explore from "@/pages/explore/Explore";
 import { useAuthStore } from "./stores/auth.store";
 import { useEffect, type JSX } from "react";
 
@@ -59,6 +60,8 @@ function App() {
           }
         >
           <Route index element={<Home />} />
+          <Route path="/explore" element={<Explore />} />
+
         </Route>
       </Routes>
     </Router>
