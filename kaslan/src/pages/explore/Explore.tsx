@@ -8,7 +8,7 @@ import { ExploreScroll } from "./components/ExploreScroll"
 
 function Explore() {
     return (
-        <div className="flex flex-col items-center justify-center h-screen overflow-hidden">
+        <div className="flex flex-col items-center justify-center h-[90vh] overflow-hidden">
             <div className="flex w-5/6 h-full flex-col gap-6 overflow-hidden ">
                 <Tabs defaultValue="books">
                     <TabsList>
