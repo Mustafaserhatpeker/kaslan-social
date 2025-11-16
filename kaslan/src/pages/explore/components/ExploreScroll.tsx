@@ -13,7 +13,7 @@ export function ExploreScroll(
     { gridCols }: { gridCols?: string }
 ) {
     return (
-        <ScrollArea className="h-full max-h-[90vh] w-full rounded-md ">
+        <ScrollArea className="h-full max-h-[90vh] w-full rounded-md pb-30 ">
             <div className={` grid ${gridCols ?? ''}`} >
                 {tags.map((tag) => (
                     <React.Fragment key={tag}>
