@@ -4,9 +4,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { ExploreCard } from "./components/ExploreCard"
-import UcurtmaAvcisi from '@/assets/ucurtma-avcisi.jpg'
-import Creed from '@/assets/creed.avif'
+import { ExploreScroll } from "./components/ExploreScroll"
 
 function Explore() {
     return (
@@ -18,33 +16,11 @@ function Explore() {
                         <TabsTrigger value="movies">Filmleri Keşfet</TabsTrigger>
                     </TabsList>
                     <TabsContent value="books">
-                        <div className="grid grid-cols-3 overflow-auto max-h-screen">
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                            <ExploreCard image={UcurtmaAvcisi} />
-                        </div>
+                        <ExploreScroll gridCols='grid-cols-3' />
 
                     </TabsContent>
                     <TabsContent value="movies">
-                        <div className="grid grid-cols-3 overflow-auto max-h-screen ">
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                            <ExploreCard image={Creed} />
-                        </div>
-
+                        <ExploreScroll gridCols='grid-cols-3' />
                     </TabsContent>
                 </Tabs>
             </div>

@@ -7,17 +7,15 @@ const tags = Array.from({ length: 10 }).map(
 )
 
 
-
-
 export function InfiniteScroll(
-    { DataCard }: { DataCard: React.ComponentType }
+    { DataCard, gridCols }: { DataCard: React.ComponentType, gridCols?: string }
 ) {
     return (
         <ScrollArea className="h-full max-h-[90vh] w-full rounded-md ">
             <div className="p-4" >
                 {tags.map((tag) => (
                     <React.Fragment key={tag}>
-                        <div className=" flex w-full h-full items-center justify-center my-8">
+                        <div className={` grid ${gridCols ?? ''} w-full h-full  items-center justify-center my-8`}>
                             <DataCard />
                         </div>
 
