@@ -1,7 +1,6 @@
 import * as React from "react"
 
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { DataCard } from "./DataCard"
 
 const tags = Array.from({ length: 10 }).map(
     (_, i, a) => `v1.2.0-beta.${a.length - i}`
@@ -10,7 +9,9 @@ const tags = Array.from({ length: 10 }).map(
 
 
 
-export function InfiniteScroll() {
+export function InfiniteScroll(
+    { DataCard }: { DataCard: React.ComponentType }
+) {
     return (
         <ScrollArea className="h-full max-h-[90vh] w-full rounded-md ">
             <div className="p-4" >
@@ -26,5 +27,3 @@ export function InfiniteScroll() {
         </ScrollArea>
     )
 }
-//lı bağemın bu zıvıstan
-//fexiye teyra edi qale
