@@ -26,6 +26,8 @@ import {
 
 // ✅ Tema context'i import ediliyor
 import { useThemeContext } from "@/contexts/ThemeContext"
+import { useAuthStore } from "@/stores/auth.store"
+import { useNavigate } from "react-router-dom"
 
 export function NavUser({
   user,
@@ -37,9 +39,16 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
+  const navigate = useNavigate()
 
   // ✅ Tema fonksiyonları burada
   const { toggleTheme, theme } = useThemeContext()
+  const { logout } = useAuthStore()
+
+  const onLogout = async () => {
+    await logout()
+    navigate("/login")
+  }
 
   return (
     <SidebarMenu>
@@ -110,8 +119,9 @@ export function NavUser({
 
             <DropdownMenuSeparator />
 
-            <DropdownMenuItem>
+            <DropdownMenuItem onClick={onLogout}>
               <LogOut />
+
               Log out
             </DropdownMenuItem>
 
